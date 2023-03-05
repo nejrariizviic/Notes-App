@@ -6,6 +6,7 @@ import Main from './Main';
 
 export default function App() {
 const [notes, setNotes] = React.useState([]);
+const [activeNote, setActiveNote] = React.useState(false);
 
 const onAddNote = () => {
   const newNote = {
@@ -18,12 +19,37 @@ const onAddNote = () => {
   setNotes ([newNote, ...notes]);
 };
 
+const onDeleteNote = (idToDelete) => {
+  setNotes(notes.filter((note) => note.id !== idToDelete));
+};
+
+
+const getActiveNote = () => {
+  return notes.find((note) => note.id === activeNote);
+};
+
+const onUpdateNote = (updateNote) => {
+  const updateNotesArray=notes.map((note) => {
+    if(note.id === activeNote) {
+      return updateNote;
+    }
+
+    return note;
+  })
+  setNotes(updateNotesArray);
+}
 
 
   return (
     <div className="App">
-   <Sidebar notes={notes} onAddNote={onAddNote}/>
-   <Main/>
+   <Sidebar notes={notes}
+            onAddNote={onAddNote}
+            onDeleteNote={onDeleteNote}
+            activeNote={activeNote}
+            setActiveNote={setActiveNote}/>
+   
+   <Main  activeNote={getActiveNote()}
+   onUpdateNote={onUpdateNote}/>
     </div>
   );
 }
