@@ -1,11 +1,14 @@
-import './App.css';
+import Sidebar from './Sidebar';
+import "./App.css";
+import Main from './Main'; 
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-     notes
+   <Sidebar/>
+   <Main/>
     </div>
   );
 }
 
-export default App;
+
