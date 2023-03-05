@@ -1,22 +1,26 @@
 
 
-export default function Sidebar(){
+export default function Sidebar({ notes, onAddNote }){
+
    return (
    <div className="app-sidebar">
       <div className="app-sidebar-header">
          <h1>Notes</h1>
-         <button>Add</button>
+         <button onClick={onAddNote}>Add</button>
       </div>
       <div className="app-sidebar-notes">
-         <div className="app-sidebar-note">
+      {notes.map((note) => (
+            <div className="app-sidebar-note">
             <div className="sidebar-note-title">
-               <strong>TITLE</strong>
+               <strong>{note.title}</strong>
                <button>Delete</button>
             </div>
-            <p>Note preview</p>
+            <p>{note.body}</p>
 
-            <small className="note-meta" > Last modified [date]</small>
+            <small className="note-meta" > Last modified {note.lastModified}</small>
          </div>
+      ))}
+      
       </div>
    </div>
       )
