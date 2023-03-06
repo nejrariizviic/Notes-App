@@ -1,12 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import uuid from "react-uuid";
 import Sidebar from './Sidebar';
 import "./App.css";
 import Main from './Main'; 
 
 export default function App() {
-const [notes, setNotes] = React.useState([]);
+const [notes, setNotes] = React.useState(JSON.parse(localStorage.notes) || []);
 const [activeNote, setActiveNote] = React.useState(false);
+
+
+useEffect(() => {
+  localStorage.setItem("notes", JSON.stringify(notes));
+}, [notes]);
+
 
 const onAddNote = () => {
   const newNote = {

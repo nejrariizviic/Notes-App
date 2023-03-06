@@ -1,7 +1,17 @@
+import ReactMarkdown from "react-markdown";
 
+export default function Main( {activeNote, onUpdateNote }){
+const onEditField=(key, value) => {
+   onUpdateNote({
+      ...activeNote,
+      [key]:value,
+      lastModified: Date.now(),
 
-export default function Main( {activeNote }){
-const onEditField=(key, value) => {};
+   })
+};
+
+if(!activeNote) return <div className="no-active-note">No note selected</div>
+
 
 
    return (
@@ -22,7 +32,7 @@ const onEditField=(key, value) => {};
 
       <div className="app-mainnote-preview">
          <h1 className="preview-title">{activeNote.title}</h1>
-         <div className="markdown-preview">{activeNote.body}</div>
+         <ReactMarkdown className="markdown-preview">{activeNote.body}</ReactMarkdown>
       </div>
 
    </div>
