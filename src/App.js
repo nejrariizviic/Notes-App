@@ -5,7 +5,7 @@ import "./App.css";
 import Main from './Main'; 
 
 export default function App() {
-const [notes, setNotes] = React.useState(JSON.parse(localStorage.notes) || []);
+const [notes, setNotes] = React.useState(localStorage.notes ? JSON.parse(localStorage.notes) : []);
 const [activeNote, setActiveNote] = React.useState(false);
 
 
