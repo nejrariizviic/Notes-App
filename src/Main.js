@@ -1,5 +1,6 @@
 import ReactMarkdown from "react-markdown";
 
+
 export default function Main( {activeNote, onUpdateNote }){
 const onEditField=(key, value) => {
    onUpdateNote({
@@ -10,7 +11,10 @@ const onEditField=(key, value) => {
    })
 };
 
-if(!activeNote) return <div className="no-active-note">No note selected</div>
+if(!activeNote) return <div className="no-active-note">No note selected
+                 
+                        </div>
+
 
 
 
