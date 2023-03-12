@@ -27,7 +27,7 @@ if(!activeNote) return <div className="no-active-note">No note selected
          onChange={(e) => onEditField("title", e.target.value)}
          autoFocus></input>
     
-     <textarea id="body" 
+     <textarea id="body"
      placeholder="Write your note here . . ." 
      onChange={(e) => onEditField("body", e.target.value)}
      value={activeNote.body}
