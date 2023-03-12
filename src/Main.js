@@ -1,4 +1,5 @@
 import ReactMarkdown from "react-markdown";
+import images from '../src/ss.png';
 
 
 export default function Main( {activeNote, onUpdateNote }){
@@ -12,7 +13,7 @@ const onEditField=(key, value) => {
 };
 
 if(!activeNote) return <div className="no-active-note">No note selected
-                 
+                 <img src={images} className="img1"/>
                         </div>
 
 
