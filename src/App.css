@@ -25,10 +25,11 @@ button {
   font-size: inherit;
   font-family: inherit;
   cursor: pointer;
-  color: #08c;
+  color: 	#AA98A9;
+  font-weight: bold;
 }
 button:hover {
-  color: #04c;
+  color: #800080;
 }
 
 .App {
@@ -36,11 +37,17 @@ button:hover {
 }
 
 /* SIDEBAR STYLES */
+.notes {
+  color: #ffffff;
+  padding-left: 110px;
+}
+
 
 .app-sidebar {
   width: 30%;
   height: 100vh;
   border-right: 1px solid #ddd;
+  background-color: #CBC3E3;
 }
 
 .app-sidebar-header {
@@ -65,7 +72,7 @@ button:hover {
   justify-content: space-between;
 }
 .app-sidebar-note button {
-  color: crimson;
+  color: #ffffff;
 }
 .app-sidebar-note p {
   margin: 10px 0;
@@ -80,7 +87,7 @@ button:hover {
 }
 .app-sidebar-note.active,
 .app-sidebar-note.active small {
-  background: #08c;
+  background: #C3B1E1;
   color: white;
 }
 
@@ -101,7 +108,11 @@ button:hover {
   line-height: 100vh;
   text-align: center;
   font-size: 2rem;
-  color: #999;
+  color: #d0d0f5;
+}
+
+.note-title {
+  color: #ac8faa;
 }
 
 /* Editing */

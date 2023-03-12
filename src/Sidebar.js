@@ -7,7 +7,7 @@ const sortedNotes=notes.sort((a,b) => b.lastModified - a.lastModified);
    return (
    <div className="app-sidebar">
       <div className="app-sidebar-header">
-         <h1>Notes</h1>
+         <h1 className="notes">Notes</h1>
          <button onClick={onAddNote}>Add</button>
       </div>
       <div className="app-sidebar-notes">
@@ -15,7 +15,7 @@ const sortedNotes=notes.sort((a,b) => b.lastModified - a.lastModified);
             <div className={'app-sidebar-note ${note.id === activeNote && "active"}'}
             onClick={() => setActiveNote(note.id)}>
             <div className="sidebar-note-title">
-               <strong>{note.title}</strong>
+               <strong className="note-title">{note.title}</strong>
                <button onClick={() => onDeleteNote(note.id)}>Delete</button>
             </div>
             <p>{note.body && note.body.substr(0,100) + " . . ."}</p>
